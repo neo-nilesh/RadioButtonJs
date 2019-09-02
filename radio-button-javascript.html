@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>radio button and checkbox by js</title>
+</head>
+<body>
+	<form action="#" method="post" id="testForm">
+	    <fieldset>
+	    <legend>Example Form: show value on radio button on click</legend>
+	    
+	    <p>Radio button:
+	        <label><input type="radio" name="test_radio" value="1" /> Test 1</label>
+	        <label><input type="radio" name="test_radio" value="2" /> Test 2</label>
+	        <label><input type="radio" name="test_radio" value="3" /> Test 3</label>
+	    </p>
+	    <p>
+	    	<label>Result</label>
+	    	<input type="text" name="result" readonly>
+	    </p>
+	    <p>Click on radio button and value of that button will show in result text box</p>
+	    </fieldset>	    
+	</form>
+	<script type="text/javascript">
+		var form = document.getElementById('testForm');
+		var radio = form.elements['test_radio'];
+		var result = form.elements['result'];
+		//radio = document.getElementsByName('test_radio');
+		for (var i=0, len=radio.length; i<len; i++) {
+			radio[i].onclick = my_script;
+			//radio[i].addEventListener("click", my_script);
+			function my_script(){
+				result.value = this.value;
+			}
+		}
+	</script>
+</body>
+</html>
